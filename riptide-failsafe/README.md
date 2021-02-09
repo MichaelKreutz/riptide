@@ -154,7 +154,7 @@ that a certain operation is in fact idempotent.
 
 ```java
 http.post("/subscriptions/{id}/cursors", subscriptionId)
-    .attribute(MethodDetector.IDEMPOTENT, true)
+    .attribute(Attributes.IDEMPOTENT, true)
     .header("X-Nakadi-StreamId", streamId)
     .body(cursors)
     .dispatch(series(),
